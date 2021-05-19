@@ -83,7 +83,7 @@ def result():
         scaler = pickle.load(scaler_file)
 
     x = scaler.transform(x)
-    model_path = os.path.join(r'C:\Users\msn21\Desktop\Major Project\Stroke','models\dt.sav')
+    model_path = os.path.join(r'C:\Users\msn21\Desktop\Major Project\Stroke','models\model.sav')
     dt = joblib.load(model_path)
 
     Y_pred = dt.predict(x)
