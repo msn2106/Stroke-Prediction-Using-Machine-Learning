@@ -77,13 +77,15 @@ def result():
     x = np.array([gender, age, hypertension, heart_disease, ever_married, work_type, Residence_type,
                   avg_glucose_level, bmi, smoking_status]).reshape(1, -1)
 
-    scaler_path = os.path.join(r'C:\Users\msn21\Desktop\Major Project\Stroke','models\scaler.pkl')
+    #scaler_path = os.path.join(r'C:\Users\msn21\Desktop\Major Project\Stroke','models\scaler.pkl')
+    scaler_path = "models/scaler.pkl"
     scaler = None
     with open(scaler_path,'rb') as scaler_file:
         scaler = pickle.load(scaler_file)
 
     x = scaler.transform(x)
-    model_path = os.path.join(r'C:\Users\msn21\Desktop\Major Project\Stroke','models\model.sav')
+    #model_path = os.path.join(r'C:\Users\msn21\Desktop\Major Project\Stroke','models\model.sav')
+    model_path = "models/model.sav"
     dt = joblib.load(model_path)
 
     Y_pred = dt.predict(x)
