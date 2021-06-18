@@ -8,7 +8,7 @@ app= Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("home.html")
+    return render_template("templates/home.html")
 
 @app.route("/about",methods=['GET'])
 def about():
