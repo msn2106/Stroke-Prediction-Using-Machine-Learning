@@ -1,20 +1,23 @@
-from flask import Flask, render_template, request
-import joblib
-import os
-import numpy as np
 import pickle
 
-app= Flask(__name__)
+import joblib
+import numpy as np
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
 
 @app.route("/")
 def index():
-    return render_template("templates/home.html")
+    return render_template("home.html")
 
-@app.route("/about",methods=['GET'])
+
+@app.route("/about", methods=['GET'])
 def about():
     return render_template("about.html")
 
-@app.route("/result",methods=['POST','GET'])
+
+@app.route("/result", methods=['POST', 'GET'])
 def result():
     gender = int(request.form['gender'])
     age = int(request.form['age'])
@@ -77,14 +80,14 @@ def result():
     x = np.array([gender, age, hypertension, heart_disease, ever_married, work_type, Residence_type,
                   avg_glucose_level, bmi, smoking_status]).reshape(1, -1)
 
-    #scaler_path = os.path.join(r'C:\Users\msn21\Desktop\Major Project\Stroke','models\scaler.pkl')
+    # scaler_path = os.path.join(r'C:\Users\msn21\Desktop\Major Project\Stroke','models\scaler.pkl')
     scaler_path = "models/scaler.pkl"
     scaler = None
-    with open(scaler_path,'rb') as scaler_file:
+    with open(scaler_path, 'rb') as scaler_file:
         scaler = pickle.load(scaler_file)
 
     x = scaler.transform(x)
-    #model_path = os.path.join(r'C:\Users\msn21\Desktop\Major Project\Stroke','models\model.sav')
+    # model_path = os.path.join(r'C:\Users\msn21\Desktop\Major Project\Stroke','models\model.sav')
     model_path = "models/model.sav"
     dt = joblib.load(model_path)
 
@@ -96,5 +99,6 @@ def result():
     else:
         return render_template('stroke.html')
 
-if __name__=="__main__":
-    app.run(debug=True,port=7384)
+
+if __name__ == "__main__":
+    app.run(debug=True, port=7384)

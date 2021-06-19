@@ -6,13 +6,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Home</title>
 </head>
 
 <nav class="navbar navbar-dark bg-dark navbar-fixed-top">
     <a class="navbar-brand" href="#">Stroke Risk Prediction</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -29,160 +31,165 @@
 
 <body>
 
-    <div class="container-fluid">
-        <div class="col-lg-12">
-            <form action="{{ url_for('result') }}" method="post">
-                <br>
-                <br>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4">
-                            <label for="gender">Gender</label>
-                        </div>
-                        <div class="col-lg-8 col-md-8">
+<div class="container-fluid">
+    <div class="col-lg-12">
+        <form action="{{ url_for('result') }}" method="post">
+            <br>
+            <br>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <label for="gender">Gender</label>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
 
-                            <select class="form-control" id="gender" name="gender" >
-                              <option>Select</option>
-                              <option value="1">Male</option>
-                              <option value="0">Female</option>
-                              <option value="2">Other</option>
-                          </select>
-                      </div>
-                  </div>
-                  <br>
-                  <div class="row">
+                        <select class="form-control" id="gender" name="gender">
+                            <option>Select</option>
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
+                            <option value="2">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
                     <div class="col-lg-4 col-md-4">
                         <label for="age">Age</label>
                     </div>
                     <div class="col-lg-8 col-md-8">
-                        <input type="number" class="form-control" id="age" name="age" placeholder="Enter your Age" min="0" max="100" required>
-
-                    </select>
+                        <input type="number" class="form-control" id="age" name="age" placeholder="Enter your Age"
+                               min="0" max="100" required>
+                    </div>
                 </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-lg-4 col-md-4">
-                    <label for="hypertension">Hypertension  </label>
+                <br>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <label for="hypertension">Hypertension </label>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <select class="form-control" id="hypertension" name="hypertension">
+                            <option>Select</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="col-lg-8 col-md-8">
-                    <select class="form-control" id="hypertension" name="hypertension" >
-                      <option>Select</option>
-                      <option value="1">Yes</option>
-                      <option value="0">No</option>
-                  </select>
-              </div>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-lg-4 col-md-4">
-                <label for="heart_disease">Heart Disease </label>
+                <br>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <label for="heart_disease">Heart Disease </label>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <select class="form-control" id="heart_disease" name="heart_disease">
+                            <option>Select</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <label for="ever_married">Ever Married</label>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <select class="form-control" id="ever_married" name="ever_married">
+                            <option>Select</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <label for="work_type">Work Type </label>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <select class="form-control" id="work_type" name="work_type">
+                            <option>Select</option>
+                            <option value="0">Government Job</option>
+                            <option value="1">Never worked</option>
+                            <option value="2">Private</option>
+                            <option value="3">Self Employed</option>
+                            <option value="4">Student</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <label for="Residence_type">Residence Type</label>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <select class="form-control" id="Residence_type" name="Residence_type">
+                            <option>Select</option>
+                            <option value="1">Urban</option>
+                            <option value="0">Rural</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <label for="avg_glucose_level">Average Glucose Level</label>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <input type="number" class="form-control" id="avg_glucose_level" name="avg_glucose_level"
+                               placeholder="Avg glucose level" min="10" max="400" required>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <label for="bmi">BMI (Body Mass Index)</label>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <input type="number" class="form-control" id="bmi" name="bmi" placeholder="BMI" min="0"
+                               max="100" required>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4">
+                        <label for="smoking_status">Smoking Status</label>
+                    </div>
+                    <div class="col-lg-8 col-md-8">
+                        <select class="form-control" id="smoking_status" name="smoking_status">
+                            <option>Select</option>
+                            <option value="0">Unknown</option>
+                            <option value="1">Formly smoked</option>
+                            <option value="2">Never smoked</option>
+                            <option value="3">Smoked regularly</option>
+                        </select>
+
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <center>
+                    <button type="submit" class="btn btn-dark" value="submit">Submit</button>
+                </center>
             </div>
-            <div class="col-lg-8 col-md-8">
-                <select class="form-control" id="heart_disease" name="heart_disease" >
-                  <option>Select</option>
-                  <option value="1">Yes</option>
-                  <option value="0">No</option>
-              </select>
-
-          </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-lg-4 col-md-4">
-            <label for="ever_married">Ever Married</label>
-        </div>
-        <div class="col-lg-8 col-md-8">
-           <select class="form-control"  id="ever_married" name="ever_married" >
-              <option>Select</option>
-              <option value="1">Yes</option>
-              <option value="0">No</option>
-          </select>
-
-      </select>
-  </div>
-</div>
-<br>
-<div class="row">
-    <div class="col-lg-4 col-md-4">
-        <label for="work_type">Work Type </label>
+        </form>
     </div>
-    <div class="col-lg-8 col-md-8">
-        <select class="form-control"  id="work_type" name="work_type" >
-          <option>Select</option>
-          <option value="0">Government Job</option>
-          <option value="1">Never worked</option>
-          <option value="2">Private</option>
-          <option value="3">Self Employed</option>
-          <option value="4">Student</option>
-      </select>
-  </div>
-</div>
-<br>
-<div class="row">
-    <div class="col-lg-4 col-md-4">
-        <label for="Residence_type">Residence Type</label>
-    </div>
-    <div class="col-lg-8 col-md-8">
-        <select class="form-control"  id="Residence_type" name="Residence_type" >
-          <option>Select</option>
-          <option value="1">Urban</option>
-          <option value="0">Rural</option>
-      </select> 
-  </div>
-</div>
-<br>
-<br>
-<div class="row">
-    <div class="col-lg-4 col-md-4">
-        <label for="avg_glucose_level">Average Glucose Level</label>
-    </div>
-    <div class="col-lg-8 col-md-8">
-        <input type="number" class="form-control" id="avg_glucose_level" name="avg_glucose_level" placeholder="Avg glucose level" min="10" max="400" required>
-    </div>
-</div>
-<br>
-<br>
-<div class="row">
-    <div class="col-lg-4 col-md-4">
-        <label for="bmi">BMI (Body Mass Index)</label>
-    </div>
-    <div class="col-lg-8 col-md-8">
-        <input type="number" class="form-control" id="bmi" name="bmi" placeholder="BMI" min="0" max="100" required>
-    </div>
-</div>
-<br>
-<br>
-<div class="row">
-    <div class="col-lg-4 col-md-4">
-        <label for="smoking_status">Smoking Status</label>
-    </div>
-    <div class="col-lg-8 col-md-8">
-        <select class="form-control" id="smoking_status" name="smoking_status">
-          <option>Select</option>
-          <option value="0">Unknown</option>
-          <option value="1">Formely smoked</option>
-          <option value="2">Never smoked</option>
-          <option value="3">Smoked regularly</option>
-      </select>
-
-  </div>
-</div>
-<br>
-
-<br>
-<br>
-<center>
-    <button type="submit" class="btn btn-dark" value="submit">Submit</button>
-</center>
-</form>
-</div>
 </div>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
 <style>
     body {
@@ -192,6 +199,7 @@
     .col-lg-4 {
         color: #ffffff;
     }
+
 </style>
 
 </html>
